@@ -77,6 +77,15 @@ public class ArticleListActivity extends AppCompatActivity implements
             refresh();
         }
 
+        TextView mTitle = (TextView) mToolbar.findViewById(R.id.toolbar_title);
+
+        mToolbar.setTitle(R.string.app_name);
+        setSupportActionBar(mToolbar);
+
+        mTitle.setText(mToolbar.getTitle());
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         // snackbar demo when image is clicked
         imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setOnClickListener(new View.OnClickListener() {
