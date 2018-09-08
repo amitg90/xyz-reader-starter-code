@@ -30,8 +30,24 @@
         <item name="android:elevation">4dp</item>
         <item name="android:background">@color/cardview_light_background</item>
     </style>
-    <style name="MyToolbarStyle">
-        <item name="android:textStyle">italic</item>
+
+    <style name="ArticleTitleTheme" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/theme_primary</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="ArticleSubTitleTheme" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textColor">#8000</item>
+    </style>
+
+    <style name="ImageViewTheme">
+        <item name="android:background">@color/theme_accent</item>
     </style>
 
 </resources>
