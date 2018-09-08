@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.View;
@@ -73,19 +74,19 @@ public class ArticleDetailActivity extends AppCompatActivity
                     mCursor.moveToPosition(position);
                 }
                 mSelectedItemId = mCursor.getLong(ArticleLoader.Query._ID);
-                updateUpButtonPosition();
+                //updateUpButtonPosition();
             }
         });
 
         mUpButtonContainer = findViewById(R.id.up_container);
 
-        mUpButton = findViewById(R.id.action_up);
-        mUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onSupportNavigateUp();
-            }
-        });
+//        mUpButton = findViewById(R.id.action_up);
+//        mUpButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                onSupportNavigateUp();
+//            }
+//        });
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mUpButtonContainer.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
@@ -94,7 +95,7 @@ public class ArticleDetailActivity extends AppCompatActivity
                     view.onApplyWindowInsets(windowInsets);
                     mTopInset = windowInsets.getSystemWindowInsetTop();
                     mUpButtonContainer.setTranslationY(mTopInset);
-                    updateUpButtonPosition();
+                    //updateUpButtonPosition();
                     return windowInsets;
                 }
             });
@@ -110,6 +111,9 @@ public class ArticleDetailActivity extends AppCompatActivity
         android.support.v7.widget.Toolbar mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.detail_toolbar);
         mToolbar.setTitle("");
         setSupportActionBar(mToolbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -147,14 +151,14 @@ public class ArticleDetailActivity extends AppCompatActivity
     public void onUpButtonFloorChanged(long itemId, ArticleDetailFragment fragment) {
         if (itemId == mSelectedItemId) {
             mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
-            updateUpButtonPosition();
+            //updateUpButtonPosition();
         }
     }
 
-    private void updateUpButtonPosition() {
-        int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
-        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));
-    }
+//    private void updateUpButtonPosition() {
+//        int upButtonNormalBottom = mTopInset + mUpButton.getHeight();
+//        mUpButton.setTranslationY(Math.min(mSelectedItemUpButtonFloor - upButtonNormalBottom, 0));
+//    }
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
         public MyPagerAdapter(FragmentManager fm) {
@@ -167,7 +171,7 @@ public class ArticleDetailActivity extends AppCompatActivity
             ArticleDetailFragment fragment = (ArticleDetailFragment) object;
             if (fragment != null) {
                 mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
-                updateUpButtonPosition();
+                //updateUpButtonPosition();
             }
         }
 

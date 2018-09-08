@@ -6,6 +6,7 @@
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/toolbar_container"
+        android:layout_marginTop="17dp"
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
 
@@ -17,26 +18,14 @@
             style="@style/MyActivityDetailToolBarTheme"
             app:popupTheme="@style/MyToolBarTheme">
 
-            <ImageButton
-                android:theme="@style/AlertDialog.AppCompat"
-                android:id="@+id/action_up"
-                android:layout_marginTop="15dp"
-                android:layout_width="56dp"
-                android:layout_height="?actionBarSize"
-                android:background="?selectableItemBackgroundBorderless"
-                android:contentDescription="@string/up"
-                android:src="@drawable/ic_arrow_back" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_gravity="center"
+                android:id="@+id/toolbar_title" />
 
         </android.support.v7.widget.Toolbar>
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:src="@drawable/logo"
-            style="@style/ImageViewTheme"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:contentDescription="@string/app_name" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -50,7 +39,5 @@
         android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize">
-
-
     </FrameLayout>
 </android.support.design.widget.CoordinatorLayout>

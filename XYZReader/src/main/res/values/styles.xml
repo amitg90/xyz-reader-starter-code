@@ -26,8 +26,7 @@
     </style>
 
     <style name="MyActivityDetailToolBarTheme">
-        <item name="android:elevation">4dp</item>
-        <item name="android:background">@color/theme_primary_dark</item>
+        <item name="android:elevation">6dp</item>
     </style>
 
     <style name="MyToolBarTheme">
