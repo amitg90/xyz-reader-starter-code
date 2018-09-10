@@ -18,9 +18,7 @@
         <com.example.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
             android:scaleType="centerCrop"
             android:background="@color/photo_placeholder" />
 

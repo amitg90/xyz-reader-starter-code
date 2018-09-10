@@ -17,12 +17,18 @@
 
 <resources>
 
-    <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-
+    <style name="BaseAppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <!-- declare the theme name that's actually applied in the manifest file -->
+    <style name="Theme.Bacon" parent="BaseAppTheme" />
 
     <style name="Theme.Bacon.Detail">
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:color">#D32F2F</item>
     </style>
 
     <style name="MyActivityDetailToolBarTheme">
@@ -51,7 +57,7 @@
     </style>
 
     <style name="ImageViewTheme">
-        <item name="android:background">@color/theme_accent</item>
+        <item name="android:background">@color/imageColor</item>
     </style>
 
 </resources>
